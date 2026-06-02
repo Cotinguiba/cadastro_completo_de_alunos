@@ -40,6 +40,7 @@ void main() {
                     println("ERRO: o nome do aluno não pode ficar vazio.");
                     i--;
                     continue;
+
                 }else if (nome.equalsIgnoreCase("pronto")){
                     break;
                 }
@@ -95,9 +96,25 @@ void main() {
         }
 
         if (opcao.equals("3")){
-            println("Buscar aluno: ");
-            print("Insira o nome do aluno: ");
-            //TODO Criar busca
+            println("Buscar aluno");
+            String busca = readln("Insira o nome do aluno: ");
+
+            int posicao = nomes.indexOf(busca);
+
+            if (posicao != -1){
+                println("aluno cadastrado !!!");
+                println("===============");
+                println("Cadastro do aluno:");
+                println("===============");
+                println("Matricula n° " + (posicao + 1));
+                println("Nome: " + nomes.get(posicao));
+                println("Idade: " + idades.get(posicao) + " anos");
+                println("Curso: " + cursos.get(posicao));
+            }else{
+                println("Aluno nao cadastrado !!!");
+            }
+            println("===============");
+
         }
 
         if (opcao.equals("4")){
@@ -119,6 +136,3 @@ void main() {
 
     }while(!opcao.equals("5"));
 }
-
-
-
